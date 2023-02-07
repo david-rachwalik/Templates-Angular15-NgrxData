@@ -1,4 +1,4 @@
-# Template
+# Templates-Angular15-NgrxData
 
 ## Web App ([repo](https://github.com/david-rachwalik/Templates-Angular15-NgrxData))
 
