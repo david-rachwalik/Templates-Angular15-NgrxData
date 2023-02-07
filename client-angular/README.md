@@ -1,27 +1,45 @@
-# ClientAngular
+# Templates-Angular15-NgrxData
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.1.4.
+## Web App ([repo](https://github.com/david-rachwalik/Templates-Angular15-NgrxData))
 
-## Development server
+Template for Angular web application with NgRx Data
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+### Project Tech Stack
 
-## Code scaffolding
+_Languages:_ HTML, CSS, JavaScript, SCSS, TypeScript
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Angular 15, NGRX (redux data store)
 
-## Build
+### Project Commands Used
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+Generate a new Angular application ([tutorial](https://angular.io/tutorial/toh-pt5), [layouts](https://indepth.dev/posts/1235/how-to-reuse-common-layouts-in-angular-using-router-2), [RxJS](https://www.learnrxjs.io))
 
-## Running unit tests
+```bash
+ng new <app-name>
+```
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Install [NGRX](https://ngrx.io) [Store](https://ngrx.io/guide/store) for state management
 
-## Running end-to-end tests
+```bash
+ng add @ngrx/store --skip-confirmation --no-minimal --statePath=store
+ng add @ngrx/store-devtools --skip-confirmation
+ng add @ngrx/effects --skip-confirmation
+ng add @ngrx/entity --skip-confirmation
+ng add @ngrx/data --skip-confirmation
+```
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+---
 
-## Further help
+### Angular 'generate' Commands Used
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+Generate a new Angular component
+
+```bash
+ng g c <component-name>
+```
+
+Generate a new Angular module
+
+```bash
+ng g m <module-name>
+```
