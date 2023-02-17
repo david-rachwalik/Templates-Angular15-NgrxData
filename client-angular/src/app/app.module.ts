@@ -1,20 +1,23 @@
-import { NgModule, isDevMode } from '@angular/core';
+import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { StoreModule } from '@ngrx/store';
-import { reducers, metaReducers } from './store';
-import { StoreDevtoolsModule } from '@ngrx/store-devtools';
-import { EffectsModule } from '@ngrx/effects';
-import { EntityDataModule } from '@ngrx/data';
-import { entityConfig } from './entity-metadata';
+import { AppReduxModule } from './shared/redux/redux.module';
+import { SharedModule } from './shared/shared.module';
 
 @NgModule({
   declarations: [AppComponent],
-  imports: [BrowserModule, AppRoutingModule, StoreModule.forRoot(reducers, {
-      metaReducers
-    }), StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: !isDevMode() }), EffectsModule.forRoot([]), EntityDataModule.forRoot(entityConfig)],
+  imports: [
+    // --- Core imports ---
+    BrowserModule,
+    // BrowserAnimationsModule,
+    AppReduxModule,
+    // --- Routing imports ---
+    AppRoutingModule,
+    // --- Shared imports ---
+    SharedModule,
+  ],
   providers: [],
   bootstrap: [AppComponent],
 })
