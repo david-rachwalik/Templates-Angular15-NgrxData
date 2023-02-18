@@ -37,8 +37,6 @@ export class NgrxEntityRelationshipReduxModule {
   // @ngrx/data missing forFeature method for lazy loading
   // https://github.com/ngrx/platform/issues/2732#issuecomment-704222155
   constructor(eds: EntityDefinitionService) {
-    // EntityDataModuleWithoutEffects.forRoot(entityConfig),
-    // eds.registerMetadataMap(entityConfig);
     eds.registerMetadataMap(entityMetadata);
   }
 }
