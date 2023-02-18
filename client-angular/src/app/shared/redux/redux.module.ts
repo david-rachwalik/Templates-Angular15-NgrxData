@@ -7,6 +7,7 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 
 import { metaReducers, reducers } from '.';
 import { entityConfig } from './entities/entity-metadata';
+import { ProductService } from './entities/product/product.service';
 
 @NgModule({
   declarations: [],
@@ -28,5 +29,6 @@ import { entityConfig } from './entities/entity-metadata';
     EffectsModule,
     EntityDataModuleWithoutEffects,
   ],
+  providers: [ProductService],
 })
 export class AppReduxModule {}

@@ -1,0 +1,33 @@
+<h1>Welcome to NgRx Pizza!</h1>
+
+<p>
+    <b>Pizza Total</b>: {{ total$ | async }}
+</p>
+
+<p>
+    <b>Pizza IDs</b>: {{ pizzaIds$ | async| json }}
+</p>
+
+<button (click)="createPizza()">CREATE new Pizza</button>
+<br /><br />
+<hr />
+
+
+<h4>Pizzas</h4>
+<p>
+    {{ pizzas$ | async | json }}
+</p>
+<hr />
+
+
+<div *ngFor="let pizza of pizzas$ | async">
+    <!-- <img src="assets/pizza.jpg" /> -->
+
+    <h3>Pizza ID: {{ pizza.id }}</h3>
+    <p>Size: {{ pizza.size }}</p>
+
+    <button *ngIf="pizza.size === 'small'" (click)="updatePizza(pizza, 'large')">Upgrade to Large</button>
+    <button *ngIf="pizza.size === 'large'" (click)="updatePizza(pizza, 'small')">Downgrade to Small</button>
+
+    <button (click)="deletePizza(pizza.id)">DELETE</button>
+</div>

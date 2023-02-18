@@ -11,6 +11,11 @@ import { isDevMode } from '@angular/core';
 import { ActionReducer, ActionReducerMap, MetaReducer } from '@ngrx/store';
 import { ngrxEntityRelationshipReducer } from 'ngrx-entity-relationship';
 
+import {
+  productReducer,
+  State as ProductState,
+} from './entities/product/product.reducer';
+
 // log all actions (https://ngrx.io/guide/store/metareducers)
 export function debug(reducer: ActionReducer<any>): ActionReducer<any> {
   return (state, action) => {
@@ -20,9 +25,13 @@ export function debug(reducer: ActionReducer<any>): ActionReducer<any> {
   };
 }
 
-export interface State {}
+export interface State {
+  products: ProductState;
+}
 
-export const reducers: ActionReducerMap<State> = {};
+export const reducers: ActionReducerMap<State> = {
+  products: productReducer,
+};
 
 export const metaReducers: MetaReducer<State>[] = isDevMode()
   ? [debug, ngrxEntityRelationshipReducer]

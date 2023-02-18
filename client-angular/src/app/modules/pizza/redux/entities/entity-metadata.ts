@@ -1,12 +1,8 @@
 import { EntityDataModuleConfig, EntityMetadataMap } from '@ngrx/data';
 
-const entityMetadata: EntityMetadataMap = {
-  Product: {},
-};
+export const entityMetadata: EntityMetadataMap = {};
 
-const pluralNames = {
-  Product: 'Products',
-};
+const pluralNames = {};
 
 export const entityConfig: EntityDataModuleConfig = {
   entityMetadata,

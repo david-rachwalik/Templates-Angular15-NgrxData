@@ -1,1 +1,32 @@
-<p>home works!</p>
+<h1>Welcome to NgRx Home!</h1>
+
+<p>
+    <b>Product Total</b>: {{ total$ | async }}
+</p>
+
+<p>
+    <b>Product IDs</b>: {{ productIds$ | async }}
+</p>
+
+<button (click)="createProduct()">CREATE new Product</button>
+<br /><br />
+<hr />
+
+
+<h4>Products</h4>
+<p>
+    {{ products$ | async | json }}
+</p>
+<hr />
+
+
+<div *ngFor="let product of products$ | async">
+    <h3>Product ID: {{ product.id }}</h3>
+    <p>Name: {{ product.name }}</p>
+    <p>Description: {{ product.description }}</p>
+    <p>Price: {{ product.price }}</p>
+
+    <button (click)="updateProduct(product)">Randomize Price</button>
+
+    <button (click)="deleteProduct(product.id)">DELETE</button>
+</div>

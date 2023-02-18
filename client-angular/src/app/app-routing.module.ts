@@ -25,6 +25,11 @@ const routes: Routes = [
       ),
   },
   { path: 'data', redirectTo: 'ngrx-data', pathMatch: 'full' },
+  {
+    path: 'pizza',
+    loadChildren: () =>
+      import('./modules/pizza/pizza.module').then((m) => m.PizzaModule),
+  },
 ];
 
 @NgModule({
