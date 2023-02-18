@@ -8,11 +8,7 @@ import { metaReducers, reducers } from './reducers';
 
 @NgModule({
   declarations: [],
-  imports: [
-    StoreModule.forFeature('pizza', reducers, {
-      metaReducers,
-    }),
-  ],
+  imports: [StoreModule.forFeature('ngrx-entity', reducers, { metaReducers })],
   exports: [StoreModule],
   providers: [PizzaService],
 })
