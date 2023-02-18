@@ -1,8 +1,8 @@
 import { NgModule } from '@angular/core';
 
 import { SharedModule } from 'src/app/shared/shared.module';
+import { PizzaRoutingModule } from './ngrx-entity-routing.module';
 import { PizzaOrderComponent } from './pages/pizza-order/pizza-order.component';
-import { PizzaRoutingModule } from './pizza-routing.module';
 import { PizzaReduxModule } from './redux/redux.module';
 
 @NgModule({
@@ -10,4 +10,4 @@ import { PizzaReduxModule } from './redux/redux.module';
   imports: [SharedModule, PizzaRoutingModule, PizzaReduxModule],
   // Services provided here are only available within context of the module
 })
-export class PizzaModule {}
+export class NgrxEntityModule {}

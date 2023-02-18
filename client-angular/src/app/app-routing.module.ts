@@ -26,10 +26,13 @@ const routes: Routes = [
   },
   { path: 'data', redirectTo: 'ngrx-data', pathMatch: 'full' },
   {
-    path: 'pizza',
+    path: 'ngrx-entity',
     loadChildren: () =>
-      import('./modules/pizza/pizza.module').then((m) => m.PizzaModule),
+      import('./modules/ngrx-entity/ngrx-entity.module').then(
+        (m) => m.NgrxEntityModule,
+      ),
   },
+  { path: 'pizza', redirectTo: 'ngrx-entity', pathMatch: 'full' },
 ];
 
 @NgModule({
