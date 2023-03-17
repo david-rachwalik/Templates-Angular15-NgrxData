@@ -18,6 +18,14 @@ const routes: Routes = [
   },
   { path: 'rel', redirectTo: 'ngrx-entity-relationship', pathMatch: 'full' },
   {
+    path: 'ngrx-entity',
+    loadChildren: () =>
+      import('./modules/ngrx-entity/ngrx-entity.module').then(
+        (m) => m.NgrxEntityModule,
+      ),
+  },
+  { path: 'pizza', redirectTo: 'ngrx-entity', pathMatch: 'full' },
+  {
     path: 'ngrx-data',
     loadChildren: () =>
       import('./modules/ngrx-data/ngrx-data.module').then(
@@ -26,13 +34,13 @@ const routes: Routes = [
   },
   { path: 'data', redirectTo: 'ngrx-data', pathMatch: 'full' },
   {
-    path: 'ngrx-entity',
+    path: 'ngrx-data-local',
     loadChildren: () =>
-      import('./modules/ngrx-entity/ngrx-entity.module').then(
-        (m) => m.NgrxEntityModule,
+      import('./modules/ngrx-data-local/ngrx-data-local.module').then(
+        (m) => m.NgrxDataLocalModule,
       ),
   },
-  { path: 'pizza', redirectTo: 'ngrx-entity', pathMatch: 'full' },
+  { path: 'local', redirectTo: 'ngrx-data-local', pathMatch: 'full' },
 ];
 
 @NgModule({

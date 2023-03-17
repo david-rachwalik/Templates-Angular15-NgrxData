@@ -35,7 +35,6 @@ export class PizzaService {
   // select the array of ids
   getIds(): Observable<string[] | number[]> {
     return this.store.select(fromPizza.selectIds);
-    // return this.store.select(fromPizza.selectPizzaIds);
   }
 
   // select the dictionary of entities

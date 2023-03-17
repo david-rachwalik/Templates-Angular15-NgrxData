@@ -1,6 +1,6 @@
 import { isDevMode, NgModule } from '@angular/core';
-// import { EntityDataModule } from '@ngrx/data';
-import { EntityDataModuleWithoutEffects } from '@ngrx/data';
+import { EntityDataModule } from '@ngrx/data';
+// import { EntityDataModuleWithoutEffects } from '@ngrx/data';
 import { EffectsModule } from '@ngrx/effects';
 import { StoreModule } from '@ngrx/store';
 // import { RootStoreConfig, StoreModule } from '@ngrx/store';
@@ -21,6 +21,11 @@ import { ProductService } from './entities/product/product.service';
 //   // },
 // };
 
+// When the server root is different than the client (https://ngrx.io/guide/data/entity-dataservice)
+// const dataServiceConfig: DefaultDataServiceConfig = {
+//   root: 'https://api.example.com',
+// };
+
 @NgModule({
   declarations: [],
   imports: [
@@ -30,16 +35,20 @@ import { ProductService } from './entities/product/product.service';
     StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: !isDevMode() }),
     EffectsModule.forRoot([]),
     // https://ngrx.io/api/data | https://ngrx.io/api/data/EntityDataModuleWithoutEffects
-    // EntityDataModule.forRoot(entityConfig),
-    EntityDataModuleWithoutEffects.forRoot(entityConfig),
+    EntityDataModule.forRoot(entityConfig),
+    // EntityDataModuleWithoutEffects.forRoot(entityConfig),
   ],
   // exports: [StoreModule, StoreDevtoolsModule, EffectsModule, EntityDataModule],
   exports: [
     StoreModule,
     StoreDevtoolsModule,
     EffectsModule,
-    EntityDataModuleWithoutEffects,
+    EntityDataModule,
+    // EntityDataModuleWithoutEffects,
   ],
-  providers: [ProductService],
+  providers: [
+    ProductService,
+    // { provide: DefaultDataServiceConfig, useValue: dataServiceConfig },
+  ],
 })
 export class AppReduxModule {}
