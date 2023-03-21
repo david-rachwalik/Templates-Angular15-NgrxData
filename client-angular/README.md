@@ -36,6 +36,16 @@ npm i ngrx-entity-relationship
 
 ---
 
+#### Deployment Options
+
+Install [GitHub Pages deployment package for Angular](https://www.npmjs.com/package/angular-cli-ghpages) ([Workflow](https://www.atlassian.com/git/tutorials/comparing-workflows))
+
+```bash
+ng add angular-cli-ghpages
+```
+
+---
+
 ### Angular 'generate' Commands Used
 
 Generate a new Angular component
