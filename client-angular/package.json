@@ -26,7 +26,6 @@
     "@ngrx/store": "^15.2.1",
     "@ngrx/store-devtools": "^15.2.1",
     "ngrx-entity-relationship": "^1.7.1",
-    "ngrx-store-localstorage": "^15.0.0",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.12.0"

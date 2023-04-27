@@ -33,14 +33,6 @@ const routes: Routes = [
       ),
   },
   { path: 'data', redirectTo: 'ngrx-data', pathMatch: 'full' },
-  {
-    path: 'ngrx-data-local',
-    loadChildren: () =>
-      import('./modules/ngrx-data-local/ngrx-data-local.module').then(
-        (m) => m.NgrxDataLocalModule,
-      ),
-  },
-  { path: 'local', redirectTo: 'ngrx-data-local', pathMatch: 'full' },
 ];
 
 @NgModule({
